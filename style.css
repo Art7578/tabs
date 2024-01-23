@@ -14,6 +14,45 @@ body {
     margin: 0;
     box-sizing: border-box;
 }
+.wrapper,
+.accordions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* HEADER */
+
+.header {
+    background: rgb(127,14,218);
+    background: linear-gradient(90deg, 
+              rgba(127,14,218,1) 0%, 
+              rgba(18,175,221,1) 50%, 
+              rgba(13,24,230,1) 100%);
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.link {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #ffd700;
+}
+
+/* TABS */
 
 .wrapper {
     display: flex;
@@ -76,4 +115,89 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* ACCORDIONS */
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+}
+
+.accordion_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-top: none;
+    color: rgb(29, 29, 31);
+    background-color: rgb(245, 240, 240);
+}
+
+.accordion:first-child {
+    border-top: 1px solid black;
+}
+
+.accordion_title.active {
+    box-shadow: 0 0 12px 1px rgb(20, 105, 201);
+}
+
+.span {
+    display: inline-flex;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    transform: rotate(0);
+    transition: transform 0.5s ease-out;
+}
+
+.span.active {
+    transform: rotate(45deg);
+}
+
+.span::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(92, 94, 94);
+}
+
+.span::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(92, 94, 94);
+}
+
+.accordion_content {
+    font-size: 20px;
+    line-height: 1.3;
+    overflow: hidden;
+    padding: 0 20px;
+    box-sizing: content-box;
+    border: 1px solid black;
+    border-top: none;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out, opacity 0.1s;
+}
+
+.accordion_content.active {
+    visibility: visible;
+    opacity: 1;
+    padding: 20px;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out, opacity 0.1s;
 }
