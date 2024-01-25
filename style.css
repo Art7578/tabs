@@ -52,6 +52,12 @@ body {
     color: #ffd700;
 }
 
+.welcome_img {
+    width: 800px;
+    height: 600px;
+    margin: auto;
+}
+
 /* TABS */
 
 .wrapper {
@@ -134,14 +140,13 @@ body {
     font-weight: bold;
     padding: 10px 20px;
     cursor: pointer;
-    border: 1px solid black;
     border-top: none;
-    color: rgb(29, 29, 31);
-    background-color: rgb(245, 240, 240);
-}
-
-.accordion:first-child {
-    border-top: 1px solid black;
+    color: rgb(212, 212, 221);
+    background: rgb(90, 109, 7);
+    background: linear-gradient(90deg, 
+              rgba(90, 109, 7) 0%, 
+              rgb(231, 126, 6) 50%, 
+              rgb(139, 11, 165) 100%);
 }
 
 .accordion_title.active {
@@ -170,7 +175,7 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(92, 94, 94);
+    background-color: rgb(212, 212, 221);
 }
 
 .span::after {
@@ -181,7 +186,7 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(92, 94, 94);
+    background-color: rgb(212, 212, 221);
 }
 
 .accordion_content {
@@ -190,7 +195,7 @@ body {
     overflow: hidden;
     padding: 0 20px;
     box-sizing: content-box;
-    border: 1px solid black;
+    border: 1px solid rgb(240, 234, 234);
     border-top: none;
     transition: max-height 0.5s ease-out, padding 0.5s ease-out, opacity 0.1s;
 }
